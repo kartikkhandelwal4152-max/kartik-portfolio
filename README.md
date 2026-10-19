@@ -8,10 +8,9 @@ A responsive, skate-inspired personal portfolio. Cream and neon visual theme, cu
 - Express/Mongoose contact API implemented; request validation and error paths tested with an injected persistence function.
 - PDF and DOCX downloads implemented through Express and verified for file signatures and attachment headers.
 - Real MongoDB storage has NOT been tested in this environment: a database URI is required.
-- Hosted design preview: https://kartik-khandelwal-portfolio.blondmoose32.chatgpt.site (owner-private; frontend only).
-- Required final public frontend URL: **add after Vercel/Netlify deployment**.
-- Required final public backend URL: **add after Render/Railway deployment**.
-- Public GitHub repository: **create/upload and add link**.
+- Required final public frontend URL: https://kartikportfolio-delta-orpin.vercel.app/
+- Required final public backend URL: https://kartik-portfolio-rzgk.onrender.com/
+- Public GitHub repository: https://github.com/kartikkhandelwal4152-max/kartik.portfolio
 
 The preview is not a complete assignment deployment. Contact displays an honest unavailable notice when no production API origin is configured. The preview downloads the actual resume as static files; configuring VITE_API_URL switches downloads to Express routes. Static preview downloads do not by themselves satisfy the backend download requirement. They do not simulate successful submissions.
 
