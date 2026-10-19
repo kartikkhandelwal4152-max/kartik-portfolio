@@ -105,11 +105,12 @@ export function createApp({
             .status(400)
             .json({ message: 'Enter a name (2–80 characters), valid email and message (10–3000 characters).' });
         }
-        try {
-          await saveContact(data);
-        } catch (dbErr) {
-          console.warn('Database save notice:', dbErr.message);
+        if (!isReady()) {
+          return res
+            .status(503)
+            .json({ message: 'Contact service is temporarily unavailable. Please try again later.' });
         }
+        await saveContact(data);
         res.status(201).json({ message: 'Message received.' });
       } catch (error) {
         next(error);
