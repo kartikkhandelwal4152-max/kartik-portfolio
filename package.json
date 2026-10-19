@@ -1,0 +1,19 @@
+{
+  "name": "kartik-portfolio",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"backend,frontend\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "client": "npm run dev -w client",
+    "server": "npm run dev -w server",
+    "build": "npm run build -w client",
+    "test": "npm run test -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

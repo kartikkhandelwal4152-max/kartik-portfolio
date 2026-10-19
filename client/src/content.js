@@ -1,0 +1,20 @@
+// Replace null URLs with your real public links before submission.
+export const profile = {
+ name:'Kartik Khandelwal', location:'Jaipur, India', status:'B.Tech Computer Science student',
+ university:'JK Lakshmipat University', photo:'/images/kartik.png', email:'kartikkhandelwal@jklu.edu.in', github:'https://github.com/kartikkhandelwal4152-max', linkedin:'https://www.linkedin.com/in/kartik-khandelwal-7a668b307/',
+ educationYears:'2024 – Expected July 2028',
+ bio:'I’m a Computer Science student at JK Lakshmipat University, Jaipur. I enjoy building web applications and exploring how AI and cybersecurity can solve practical problems. I also bring experience in customer research, distribution and event coordination. Outside work, I enjoy regular exercise, strength training and participating in fitness activities.'
+};
+export const projects = [
+ {id:'tutor',name:'ADAPTIVE\nAI TUTOR',subtitle:'Physics. At your pace.',category:'AI / ML',color:'cyan',icon:'atom',status:'In development',description:'An adaptive physics tutor for JEE-level learning, combining question practice, feedback and concept-focused revision.',problem:'Practice is more useful when it responds to what a student understands.',approach:'Exploring structured physics question datasets, LLM-powered feedback and concept retrieval to support targeted practice.',stack:['Python','LLMs','RAG'],github:null,live:null},
+ {id:'sentinel',name:'SENTINEL',subtitle:'Signals into security insights.',category:'Cybersecurity',color:'pink',icon:'shield',status:'Academic prototype',description:'An endpoint-monitoring prototype bringing device telemetry, rule-based alerts and anomaly detection into one dashboard.',problem:'Device activity is difficult to understand when telemetry is scattered.',approach:'A Python agent sends telemetry to a backend. Rules and Isolation Forest help surface unusual activity for review.',stack:['Python','Scikit-learn','SQLite'],github:null,live:null},
+ {id:'portfolio',name:'KARTIK\n.DEV',subtitle:'A portfolio you ride through.',category:'Web development',color:'lime',icon:'code',status:'This build',description:'A skate-inspired portfolio with React, an Express API, MongoDB contact storage and resume downloads.',problem:'A portfolio should show both personality and the ability to build a complete application.',approach:'React Router powers the frontend. Express validates contact messages and stores them through Mongoose. Resume routes serve PDF and Word formats.',stack:['React','Express','MongoDB'],github:null,live:null},
+ {id:'unishare',name:'UNISHARE\nHUB',subtitle:'Knowledge, shared across campus.',category:'Web development',color:'cyan',icon:'code',status:'Academic project',description:'A resource-sharing platform for students to upload, rate and discover notes, PDFs and study guides.',problem:'Students needed a reliable place to find and share academic resources across departments.',approach:'Built a React and MySQL platform independently in 10 weeks, with adoption across 3+ departments, as reported in my resume.',stack:['React','JavaScript','MySQL'],github:null,live:null}
+];
+export const skills = [
+ {title:'Frontend',items:[['HTML & CSS','Practising',70],['JavaScript','Practising',65],['React','Practising',60]]},
+ {title:'Backend',items:[['Node.js','Learning',45],['Express','Learning',45],['MongoDB','Learning',40]]},
+ {title:'Tools & technologies',items:[['Python','Practising',65],['Git','Practising',55],['Machine learning','Learning',50],['Cybersecurity','Learning',50]]}
+];
+// Add { title, issuer, date, url, image } objects for real earned certificates.
+export const certificates = [{title:'Database Management Systems — Parts 1 & 2',issuer:'Academic certification',date:'',url:null,image:null}];
