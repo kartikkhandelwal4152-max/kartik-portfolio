@@ -11,7 +11,11 @@ dotenv.config();
 const PORT = process.env.PORT || 5001;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/kartik_portfolio';
 
-const app = createApp();
+let lastDbError = 'Connecting to database...';
+
+const app = createApp({
+  getDbError: () => lastDbError
+});
 
 const server = app.listen(PORT, () => {
   console.log(`🚀 Portfolio backend running on http://localhost:${PORT}`);
@@ -21,22 +25,30 @@ const server = app.listen(PORT, () => {
 });
 
 async function connectToDatabase() {
-  if (!process.env.MONGODB_URI && process.env.NODE_ENV === 'production') {
-    console.error('❌ MONGODB_URI is not set in server/.env or hosting environment.');
+  if (mongoose.connection.readyState === 1) {
+    lastDbError = null;
     return;
   }
 
+  const uri = process.env.MONGODB_URI || 'mongodb+srv://madhurawat4152_db_user:gVcvRpjiEKyMtrq4@kartik.qwqplw0.mongodb.net/kartik_portfolio?retryWrites=true&w=majority';
+
   try {
-    console.log(`⏳ Connecting to MongoDB at ${MONGODB_URI.replace(/\/\/([^:]+):([^@]+)@/, '//***:***@')}...`);
-    await mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 5000 });
+    console.log(`⏳ Connecting to MongoDB at ${uri.replace(/\/\/([^:]+):([^@]+)@/, '//***:***@')}...`);
+    await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
+    lastDbError = null;
     console.log('✅ Connected to MongoDB successfully.');
   } catch (error) {
+    lastDbError = error.message;
     console.warn('⚠️  MongoDB connection failed:', error.message);
-    console.warn('👉 To store contact form submissions, make sure MongoDB is running locally or set MONGODB_URI (e.g. MongoDB Atlas) in server/.env');
   }
 }
 
 connectToDatabase();
+setInterval(() => {
+  if (mongoose.connection.readyState !== 1) {
+    connectToDatabase();
+  }
+}, 10000);
 
 const stop = () => server.close(async () => {
   if (mongoose.connection.readyState !== 0) {

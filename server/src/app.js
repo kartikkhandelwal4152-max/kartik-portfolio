@@ -45,7 +45,8 @@ export function validateContact(body) {
 
 export function createApp({
   saveContact = data => Contact.create(data),
-  isReady = () => mongoose.connection.readyState === 1
+  isReady = () => mongoose.connection.readyState === 1,
+  getDbError = () => null
 } = {}) {
   const app = express();
   app.set('trust proxy', 1);
@@ -77,7 +78,8 @@ export function createApp({
   app.get('/api/health', (_req, res) => {
     res.status(200).json({
       status: 'ok',
-      database: isReady() ? 'connected' : 'connecting'
+      database: isReady() ? 'connected' : 'connecting',
+      error: isReady() ? null : getDbError()
     });
   });
 
