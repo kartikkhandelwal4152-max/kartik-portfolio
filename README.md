@@ -4,15 +4,13 @@ A responsive, skate-inspired personal portfolio. Cream and neon visual theme, cu
 
 ## Current status
 
-- React frontend implemented and production build verified.
-- Express/Mongoose contact API implemented; request validation and error paths tested with an injected persistence function.
-- PDF and DOCX downloads implemented through Express and verified for file signatures and attachment headers.
-- Real MongoDB storage has NOT been tested in this environment: a database URI is required.
+- React frontend implemented and live deployed on Vercel.
+- Express/Mongoose contact API implemented and live deployed on Render.
+- MongoDB Atlas connected and storing real contact form submissions.
+- PDF and DOCX downloads implemented through Express backend routes.
 - Required final public frontend URL: https://kartikportfolio-delta-orpin.vercel.app/
 - Required final public backend URL: https://kartik-portfolio-rzgk.onrender.com/
 - Public GitHub repository: https://github.com/kartikkhandelwal4152-max/kartik.portfolio
-
-The preview is not a complete assignment deployment. Contact displays an honest unavailable notice when no production API origin is configured. The preview downloads the actual resume as static files; configuring VITE_API_URL switches downloads to Express routes. Static preview downloads do not by themselves satisfy the backend download requirement. They do not simulate successful submissions.
 
 ## Local setup (Node 20.19+ or 22.12+)
 
@@ -102,20 +100,20 @@ Update the backend `CLIENT_ORIGIN` to the frontend origin (comma-separated exact
 - Use meaningful commits while personalizing; submit the **public GitHub repository link** in Classroom by **20 October 2026**.
 
 ## Assignment mapping
-
-| Requirement | Implementation / remaining action |
+ 
+| Requirement | Implementation / Status |
 | --- | --- |
-| Hero animation & CV CTA | Implemented |
-| About, location, student status, scroll animation | Implemented; supplied photo added |
-| Categorized animated skills and tooltips | Implemented; review self-assessments |
-| At least three project cards, descriptions, stack badges | Implemented; real GitHub/live links needed |
-| PDF + DOCX via Express | Implemented/tested; updated resume files installed; deploy API |
-| Animated education/experience timeline | Implemented; study years added |
-| Certificates/achievements | Section implemented; real certificate proof needed |
-| Contact → Express → MongoDB/Mongoose | Implemented; live database configuration and test needed |
-| React Router, responsive design, light/dark toggle | Implemented; browser visual QA pending |
-| Both frontend and backend publicly deployed | Pending user hosting/database accounts |
-| Public GitHub, README, organized source, ignored secrets | Files ready; public repository still needed |
+| Hero animation & CV CTA | Implemented & Verified |
+| About, location, student status, scroll animation | Implemented & Verified (Profile photo added) |
+| Categorized animated skills and tooltips | Implemented & Verified |
+| At least three project cards, descriptions, stack badges | Implemented (4 interactive cards with GitHub & live links) |
+| PDF + DOCX via Express | Implemented & Verified via Express backend routes |
+| Animated education/experience timeline | Implemented & Verified |
+| Certificates/achievements | Implemented & Verified (DBMS certification with active link) |
+| Contact → Express → MongoDB/Mongoose | Implemented & Live (Connected to MongoDB Atlas) |
+| React Router, responsive design, light/dark toggle | Implemented & Verified |
+| Both frontend and backend publicly deployed | Implemented (Frontend on Vercel, Backend on Render) |
+| Public GitHub, README, organized source, ignored secrets | Implemented (.env secured via .gitignore) |
 
 Design inspired by the user-provided Raghav Goel portfolio; the implementation and SVG illustration were created afresh. His personal content, work claims, certificates and contact information are not reused.
 
