@@ -9,7 +9,9 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 dotenv.config();
 
 const PORT = process.env.PORT || 5001;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/kartik_portfolio';
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  'mongodb+srv://madhurawat4152_db_user:gVcvRpjiEKyMtrq4@kartik.qwqplw0.mongodb.net/kartik_portfolio?retryWrites=true&w=majority';
 
 const app = createApp();
 
