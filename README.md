@@ -89,6 +89,9 @@ Use repository root, build `npm run build`, publish `dist`. `netlify.toml` inclu
 
 Update the backend `CLIENT_ORIGIN` to the frontend origin (comma-separated exact origins are supported). Do not include a trailing slash.
 
+### Optional Email Notifications (Nodemailer)
+Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_FROM`, `CONTACT_NOTIFY_TO`, and (when required) `SMTP_USER` / `SMTP_PASS` on the backend. For port 465 use `SMTP_SECURE=true`; for port 587 use `false` with STARTTLS. Leave these blank for database-only storage. Contact submissions are always persisted in MongoDB Atlas regardless of SMTP delivery.
+
 ## Final verification and submission
 
 - Test mobile, tablet, desktop, light/dark mode, keyboard navigation and project dialogs.
