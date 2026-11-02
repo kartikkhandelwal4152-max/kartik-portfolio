@@ -9,6 +9,7 @@ A responsive, skate-inspired personal portfolio. Cream and neon visual theme, cu
 - MongoDB Atlas connected and storing real contact form submissions.
 - PDF and DOCX downloads implemented through Express backend routes.
 - Required final public frontend URL: https://kartikportfolio-delta-orpin.vercel.app/
+- Additional Vercel deployments: https://kartik-portfolio-1ban.vercel.app/ | https://kartik-portfolio-lvvx.vercel.app/
 - Required final public backend URL: https://kartik-portfolio-rzgk.onrender.com/
 - Public GitHub repository: https://github.com/kartikkhandelwal4152-max/kartik.portfolio
 
