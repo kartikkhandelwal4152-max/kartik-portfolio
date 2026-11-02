@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { createApp } from './app.js';
+import { createNotifier } from './notifications.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
@@ -14,7 +15,8 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/kartik
 let lastDbError = 'Connecting to database...';
 
 const app = createApp({
-  getDbError: () => lastDbError
+  getDbError: () => lastDbError,
+  notifyContact: createNotifier()
 });
 
 const server = app.listen(PORT, () => {

@@ -10,5 +10,7 @@ services:
         value: production
       - key: MONGODB_URI
         sync: false
+      - key: TRUST_PROXY
+        value: "1"
       - key: CLIENT_ORIGIN
         sync: false

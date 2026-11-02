@@ -46,10 +46,11 @@ export function validateContact(body) {
 export function createApp({
   saveContact = data => Contact.create(data),
   isReady = () => mongoose.connection.readyState === 1,
-  getDbError = () => null
+  getDbError = () => null,
+  notifyContact = async () => {}
 } = {}) {
   const app = express();
-  app.set('trust proxy', 1);
+  app.set('trust proxy', process.env.TRUST_PROXY === '1' ? 1 : 1);
   app.use(helmet());
 
   const defaultOrigins = [
@@ -113,6 +114,11 @@ export function createApp({
             .json({ message: 'Contact service is temporarily unavailable. Please try again later.' });
         }
         await saveContact(data);
+        try {
+          await notifyContact(data);
+        } catch {
+          console.warn("Contact saved, but email notification failed. Inspect SMTP configuration.");
+        }
         res.status(201).json({ message: 'Message received.' });
       } catch (error) {
         next(error);

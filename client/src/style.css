@@ -6,3 +6,7 @@
 
 /* Personal photo and four-project layout */
 .portrait img{object-position:50% 36%;min-height:0}.portrait{overflow:hidden}.portrait:has(img) .name-label{bottom:10px;font-size:12px}.decks{grid-template-columns:repeat(4,minmax(0,1fr))}.deck{min-width:0;min-height:470px}.deck>strong{font-size:clamp(22px,2.4vw,38px)}.deck-kicker{font-size:7px;letter-spacing:.5px}.deck-description{font-size:13px}.project-summary{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:1050px){.decks,.project-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.deck>strong{font-size:38px}}@media(max-width:700px){.decks,.project-summary{grid-template-columns:1fr}.deck{min-height:520px}.deck>strong{font-size:44px}}
+
+/* The progress rider follows scroll position; decorative SVG stays inside the rail. */
+.progress-rail .rail-rider{display:block;width:36px;height:58px;left:50%;transform:translate(-50%,-30%);background:transparent;border:0;pointer-events:none;z-index:2}
+.progress-rail .rail-rider .mini-skater{display:block;width:36px;height:58px;overflow:visible}
