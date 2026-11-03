@@ -1,7 +1,9 @@
 // Replace null URLs with your real public links before submission.
 export const profile = {
  name:'Kartik Khandelwal', location:'Jaipur, India', status:'B.Tech Computer Science student',
- university:'JK Lakshmipat University', photo:'/images/kartik.png', email:'kartikkhandelwal@jklu.edu.in', github:'https://github.com/kartikkhandelwal4152-max', linkedin:'https://www.linkedin.com/in/kartik-khandelwal-7a668b307/',
+ university:'JK Lakshmipat University', photo:'/images/kartik.png', email:'kartikkhandelwal@jklu.edu.in',
+ phone:'+91 7014069773', phoneRaw:'+917014069773', whatsapp:'https://wa.me/917014069773',
+ github:'https://github.com/kartikkhandelwal4152-max', linkedin:'https://www.linkedin.com/in/kartik-khandelwal-7a668b307/',
  educationYears:'2024 – Expected July 2028',
  bio:'I’m a Computer Science student at JK Lakshmipat University, Jaipur. I enjoy building web applications and exploring how AI and cybersecurity can solve practical problems. I also bring experience in customer research, distribution and event coordination. Outside work, I enjoy regular exercise, strength training and participating in fitness activities.'
 };
