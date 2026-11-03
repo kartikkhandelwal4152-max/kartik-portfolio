@@ -39,17 +39,15 @@
 @keyframes spark-burst{0%{transform:scale(.7) translate(-2px,0);opacity:.4}100%{transform:scale(1.3) translate(-6px,-2px);opacity:1}}
 @keyframes nav-skate-landing{0%{transform:translate(-50%,-45px) scale(.4) rotate(-22deg);opacity:0}55%{transform:translate(-50%,3px) scale(1.2,.85) rotate(5deg);opacity:1}80%{transform:translate(-50%,-2px) scale(.96,1.04) rotate(-2deg);opacity:1}100%{transform:translate(-50%,0) scale(1) rotate(0deg);opacity:1}}
 
-/* Hero Skater Stage: Jumping from Hero to Navbar */
-.hero-skater-zone{margin-left:auto;z-index:2;margin-bottom:3px;flex-shrink:0;position:relative}
-.hero-skater-zone.jumped{animation:hero-ollie-to-navbar .75s cubic-bezier(.2,.85,.35,1.2) forwards}
-.hero-skater-zone.landed{animation:hero-land-stomp .5s cubic-bezier(.2,.9,.3,1.2) forwards}
+/* Hero Skater: Jumping from Hero to Navbar with preserved original size */
+.skater.jumped{animation:hero-ollie-to-navbar .75s cubic-bezier(.2,.85,.35,1.2) forwards}
+.skater.landed{animation:hero-land-stomp .5s cubic-bezier(.2,.9,.3,1.2) forwards}
 @keyframes hero-ollie-to-navbar{0%{transform:translate(0,0) scale(1) rotate(0deg);opacity:1}18%{transform:translate(6px,12px) scale(.95,.86) rotate(-4deg);opacity:1}45%{transform:translate(35px,-150px) scale(.72) rotate(-18deg);opacity:1;filter:drop-shadow(0 14px 18px rgba(0,0,0,.25))}75%{transform:translate(65px,-320px) scale(.45) rotate(6deg);opacity:.8}100%{transform:translate(95px,-470px) scale(.26) rotate(0deg);opacity:0;pointer-events:none}}
 @keyframes hero-land-stomp{0%{transform:translate(45px,-190px) scale(.45) rotate(-15deg);opacity:0}65%{transform:translate(0,9px) scale(1.08,.88) rotate(2deg);opacity:1}85%{transform:translate(0,-3px) scale(.98,1.02) rotate(0deg);opacity:1}100%{transform:translate(0,0) scale(1) rotate(0deg);opacity:1}}
 
 @media(max-width:700px){
-  .hero-skater-zone{position:absolute;right:-4%;top:-65px;width:90px;height:150px;max-width:none}
-  .hero-skater-zone .skater{width:90px;height:150px}
-  @keyframes hero-ollie-to-navbar{0%{transform:translate(0,0) scale(1) rotate(0deg);opacity:1}50%{transform:translate(10px,-85px) scale(.65) rotate(-15deg);opacity:.9}100%{transform:translate(20px,-190px) scale(.35) rotate(0deg);opacity:0}}
+  .skater.jumped{animation:hero-ollie-to-navbar-mob .75s cubic-bezier(.2,.85,.35,1.2) forwards}
+  @keyframes hero-ollie-to-navbar-mob{0%{transform:translate(0,0) scale(1) rotate(0deg);opacity:1}50%{transform:translate(10px,-85px) scale(.65) rotate(-15deg);opacity:.9}100%{transform:translate(20px,-190px) scale(.35) rotate(0deg);opacity:0;pointer-events:none}}
   .nav-rail-skater .mini-skater{width:26px;height:42px}
   .nav-checkpoint .pip-label{display:none}
   .nav-run-badge{display:none}
